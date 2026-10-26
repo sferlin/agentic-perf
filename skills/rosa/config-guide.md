@@ -34,7 +34,7 @@ Provides manual steps to deploy ROSA (Red Hat OpenShift Service on AWS) HCP (Hos
 
 The skill auto-verifies these tools but they must be installed:
 
-- `rosa` CLI (1.2.0+)
+- `rosa` CLI (1.2.48+)
 - `aws` CLI (2.0.0+)
 - `oc` CLI (4.12.0+)
 - `jq` (1.5+)
@@ -51,7 +51,7 @@ aws sts get-caller-identity && rosa whoami
 
 #### Installation
 
-**ROSA CLI (1.2.0+)**
+**ROSA CLI (1.2.48+)**
 
 ```bash
 # Linux

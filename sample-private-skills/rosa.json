@@ -14,8 +14,8 @@
         "name": "rosa",
         "description": "Red Hat OpenShift Service on AWS CLI - manages ROSA cluster lifecycle",
         "required": true,
-        "min_version": "1.2.0",
-        "recommended_version": "1.2.41 or later",
+        "min_version": "1.2.48",
+        "recommended_version": "1.2.48 or later",
         "installation": {
           "linux": {
             "method": "Download official binary",
@@ -26,7 +26,7 @@
               "sudo mv rosa /usr/local/bin/rosa",
               "sudo chmod +x /usr/local/bin/rosa"
             ],
-            "alternative": "curl https://mirror.openshift.com/pub/openshift-v4/clients/rosa/1.2.41/rosa-linux-amd64 -o rosa && chmod +x rosa && sudo mv rosa /usr/local/bin/"
+            "alternative": "curl https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux-amd64 -o rosa && chmod +x rosa && sudo mv rosa /usr/local/bin/"
           },
           "macos": {
             "method": "Download official binary",
@@ -46,7 +46,7 @@
         "verification": {
           "command": "rosa version",
           "expected_output_contains": "rosa version",
-          "example_output": "1.2.41"
+          "example_output": "1.2.48 or later"
         },
         "post_install": {
           "description": "Authenticate with Red Hat",
