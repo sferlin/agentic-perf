@@ -4,6 +4,7 @@
   "description": "Deploy ROSA (Red Hat OpenShift Service on AWS) HCP cluster with kube-burner-ocp for performance testing",
   "author": "Performance Engineering",
   "tags": ["rosa", "openshift", "aws", "kube-burner", "performance"],
+  "status": "Reference Guide — Manual Deployment (not automated agentic-perf workflow)",
 
   "prerequisites": {
     "overview": "This deployment requires CLI tools, cloud credentials, and sufficient AWS quotas. All tools must be installed on the machine running agentic-perf.",
@@ -965,33 +966,6 @@
         "8. Delete VPC: aws ec2 delete-vpc --vpc-id {{vpc_id}}"
       ]
     }
-  },
-
-  "agentic_perf_integration": {
-    "ticket_lifecycle": {
-      "stages": [
-        "new → triage_pending (agent interprets deployment request)",
-        "triage_pending → awaiting_hardware (agent verifies AWS credentials and quota)",
-        "awaiting_hardware → preparing_platform (agent provisions VPC and networking)",
-        "preparing_platform → awaiting_provision (agent deploys ROSA cluster)",
-        "awaiting_provision → executing_benchmark (agent installs kube-burner)",
-        "executing_benchmark → awaiting_review (agent runs tests and collects metrics)",
-        "awaiting_review → closed (agent analyzes results and reports)"
-      ]
-    },
-    "agent_responsibilities": {
-      "triage_agent": "Parse user request for cluster size, region, version, and test scenarios",
-      "resource_agent": "Verify AWS credentials, check ROSA quota, validate region availability",
-      "provisioning_agent": "Execute deployment steps, handle errors, validate each stage",
-      "benchmark_agent": "Run kube-burner workloads, monitor progress, collect logs",
-      "review_agent": "Parse kube-burner metrics, compare against baselines, generate report"
-    },
-    "natural_language_examples": [
-      "Deploy a ROSA cluster in us-west-2 with 24 workers for performance testing",
-      "Create ROSA 4.22 cluster with kube-burner installed",
-      "Set up ROSA with 48 m6i.2xlarge workers and run cluster-density test",
-      "Deploy ROSA in us-east-1 and execute node-density benchmark"
-    ]
   },
 
   "references": {

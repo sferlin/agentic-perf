@@ -4,7 +4,7 @@
 
 ## Overview
 
-Automates deployment of ROSA (Red Hat OpenShift Service on AWS) HCP (Hosted Control Plane) clusters with kube-burner-ocp pre-installed for performance testing.
+Provides manual steps to deploy ROSA (Red Hat OpenShift Service on AWS) HCP (Hosted Control Plane) clusters for performance testing with kube-burner-ocp.
 
 ### What This Skill Does
 
@@ -269,37 +269,6 @@ rosa verify permissions
 
 echo ""
 echo "✅ Pre-flight check complete"
-```
-
-## Usage with agentic-perf
-
-```bash
-# Copy skill to your private skills directory
-cp sample-private-skills/rosa.json ~/.agentic-perf/private-skills/
-
-# Deploy with natural language
-agentic-perf submit "Deploy ROSA cluster with 24 workers for performance testing"
-
-# Monitor progress
-agentic-perf watch
-# Or open: http://localhost:8090/
-```
-
-### Example Requests
-
-```bash
-# Minimal deployment (3 workers, testing)
-agentic-perf submit "Deploy ROSA cluster with 3 workers in us-west-2 named test-cluster"
-
-# Specific configuration
-agentic-perf submit "Deploy ROSA cluster with these settings:
-  - Name: perf-test
-  - Region: us-east-1
-  - Workers: 48
-  - Instance type: m6i.2xlarge"
-
-# Without bastion (use local machine)
-agentic-perf submit "Deploy ROSA cluster without bastion instance"
 ```
 
 ## Deployment Timeline
